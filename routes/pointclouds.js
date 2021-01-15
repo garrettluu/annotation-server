@@ -10,7 +10,7 @@ module.exports = (db) => {
 
     /* POST new annotations in pointcloud */
     router.post('/', async (req, res) => {
-        const newAnnotation = await annotationCollection.insertOne({name: req.body.name}, req.body);
+        const newAnnotation = await annotationCollection.insertOne(req.body);
         res.status(200).json(newAnnotation);
 
     });
